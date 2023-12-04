@@ -1,0 +1,11 @@
+<div class="flex flex-col items-center justify-evenly font-manroge">
+  <h2 class="text-3xl font-bold">{{local.city}}</h2>
+  <div class=" flex w-full gap-4">
+    <iframe class="rounded-3xl shadow-blue shadow-sm" width="450" height="300" [src]="mapUrl" frameborder="0"
+      style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
+    <div class="text-xl text-center">
+      <h2>{{local.address.local}}</h2>
+      <h2>{{local.address.street}}, {{local.address.number}}, {{local.address.complement}}</h2>
+    </div>
+  </div>
+</div>
