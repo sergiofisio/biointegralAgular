@@ -1,8 +1,7 @@
-<div
-  [ngClass]="(isSmallScreen$ | async)?' flex flex-col justify-around bg-none h-96':'w-full h-[50rem] flex items-center'"
-  class="bg-cover bg-no-repeat bg-right bg-[url('/assets/site/capa.svg')]  ">
-  <div class="flex flex-col  items-start h-full pl-10 bg-gradient-to-r from-white gap-20"
-    [ngClass]="(isSmallScreen$ | async)?'w-full justify-around items-center bg-white bg-opacity-30 gap-0 pl-0 p-1':'w-3/4 justify-center'">
+<div [ngClass]="(isSmallScreen$ | async)?' flex flex-col justify-around bg-none h-96':' h-[50rem] flex items-center'"
+  class="bg-cover bg-no-repeat bg-right w-full bg-[url('/assets/site/capa.svg')]  ">
+  <div class="flex flex-col  items-start h-full bg-gradient-to-r from-white gap-20"
+    [ngClass]="(isSmallScreen$ | async)?'w-full justify-around items-center bg-white bg-opacity-30 gap-0':'w-3/4 justify-center pl-10'">
     <h2 [ngClass]="(isSmallScreen$ | async) ? ' w-full text-4xl text-center' : 'text-6xl font-manrope'">
       Pioneiros no
       Brasil de
