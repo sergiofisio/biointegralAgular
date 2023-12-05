@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ScreenSizeService } from 'src/app/screen-size.service';
+import { ScreenSizeService } from 'src/app/services/screenSize/screen-size.service';
 
 @Component({
   selector: 'app-maps',
@@ -27,7 +27,7 @@ export class MapsComponent {
       }
     },
     {
-      city: 'São Bernardo do campo',
+      city: 'São Bernardo do Campo',
       coordinates: {
         lat: -23.691863,
         lng: -46.549258

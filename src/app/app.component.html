@@ -1,3 +1,7 @@
 <app-header></app-header>
 <app-home></app-home>
 <router-outlet></router-outlet>
+
+<button id="scrollTopBtn" class="fixed bottom-5 left-5 transition-opacity duration-500 ease-in-out"
+  [ngClass]="{'opacity-0 invisible': !showScrollTopBtn, 'opacity-100 visible': showScrollTopBtn}"
+  (click)="scrollTop()"><img src="../assets/site/voltar-1.svg" alt=""></button>

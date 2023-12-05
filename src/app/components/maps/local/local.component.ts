@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { ScreenSizeService } from 'src/app/screen-size.service';
+import { ScreenSizeService } from 'src/app/services/screenSize/screen-size.service';
 @Component({
   selector: 'app-local',
   templateUrl: './local.component.html'

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ScreenSizeService } from './../../screen-size.service';
+import { ScreenSizeService } from '../../services/screenSize/screen-size.service';
 
 @Component({
   selector: 'app-header',

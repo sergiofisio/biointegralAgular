@@ -21,6 +21,7 @@ import { InputComponent } from './components/footer/form/input/input.component';
 import { FormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
+import { MenuItemComponent } from './hamburger-menu/menu-item/menu-item.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.componen
     LocalComponent,
     InputComponent,
     HamburgerMenuComponent,
+    MenuItemComponent,
 
   ],
   imports: [

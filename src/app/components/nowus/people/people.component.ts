@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ScreenSizeService } from 'src/app/screen-size.service';
+import { ScreenSizeService } from 'src/app/services/screenSize/screen-size.service';
 
 @Component({
   selector: 'app-people',
