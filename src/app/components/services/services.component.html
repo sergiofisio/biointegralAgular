@@ -1,9 +1,12 @@
-<div class="flex flex-col items-center w-full h-full font-manroge gap-14 py-6 px-10">
+<div [ngClass]="(isSmallScreen$ | async)?'px-3':'px-10'"
+  class="flex flex-col items-center w-full h-full font-manroge gap-14 py-6 ">
   <h1 class="text-6xl font-bold">Técnicas Que Utilizamos</h1>
   <p class="text-3xl font-base text-gray text-center">O nosso trabalho é integrar o maior número de técnicas possíveis
     na consulta
     para maximizar os resultados com o menor número de sessões possíveis.</p>
-  <div class="flex items-center justify-evenly gap-8 w-full h-[32rem]">
-    <app-card *ngFor="let service of services" class="h-full" [serviceInfo]="service" />
+  <div [ngClass]="(isSmallScreen$ | async)?'overflow-y-auto w-full':'w-full justify-evenly'"
+    class="flex items-center gap-8 h-[32rem]">
+    <app-card *ngFor="let service of services" [ngClass]="(isSmallScreen$ | async)?'h-[90%]':'h-full'"
+      [serviceInfo]="service" />
   </div>
 </div>

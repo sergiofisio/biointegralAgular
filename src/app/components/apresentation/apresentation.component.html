@@ -1,10 +1,15 @@
-<div class="w-full bg-cover bg-no-repeat bg-right bg-[url('/assets/site/capa.svg')] h-[50rem] flex items-center">
-  <div class="flex flex-col justify-center items-start w-3/4 h-full pl-10 bg-gradient-to-r from-white gap-20">
-    <h2 class="text-6xl font-manroge">Pioneiros no Brasil de várias <span class="text-blue">técnicas</span>
+<div
+  [ngClass]="(isSmallScreen$ | async)?' flex flex-col justify-around bg-none h-96':'w-full h-[50rem] flex items-center'"
+  class="bg-cover bg-no-repeat bg-right bg-[url('/assets/site/capa.svg')]  ">
+  <div class="flex flex-col  items-start h-full pl-10 bg-gradient-to-r from-white gap-20"
+    [ngClass]="(isSmallScreen$ | async)?'w-full justify-around items-center bg-white bg-opacity-30 gap-0 pl-0 p-1':'w-3/4 justify-center'">
+    <h2 [ngClass]="(isSmallScreen$ | async) ? ' w-full text-4xl text-center' : 'text-6xl font-manrope'">
+      Pioneiros no
+      Brasil de
+      várias <span class="text-blue">técnicas</span>
       como
-      MICROFISIOTERPIA, PSYCH-K®
+      MICROFISIOTERAPIA, PSYCH-K®
       e BIODECODAGE</h2>
-    <app-button text="Agende já sua consulta" class="w-fit"
-      click="https://api.whatsapp.com/message/QONW6E37X27CJ1?autoload=1&app_absent=0"></app-button>
+    <app-button text="Agende já sua consulta" class="w-fit" (click)="navigateToWhatsApp()"></app-button>
   </div>
 </div>

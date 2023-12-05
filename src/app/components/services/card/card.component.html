@@ -1,6 +1,6 @@
 <div
   class="w-80 h-full border-t-4 border-t-blue border-solid shadow-black shadow-lg rounded-b-3xl flex flex-col items-center justify-between py-2 px-5 font-manroge">
-  <img class="w-56" src={{serviceInfo.img}} alt="">
+  <img [ngClass]="(isSmallScreen$ | async)?'w-40':'w-56'" src={{serviceInfo.img}} alt="">
   <div class="flex flex-col justify-evenly gap-4 h-full">
     <h2 class="text-xl font-bold text-center uppercase">{{serviceInfo.nome}}</h2>
     <p class="text-base text-center">{{serviceInfo.descricao.paragrafo1}}</p>

@@ -1,0 +1,11 @@
+<button (click)="toggleMenu()">☰</button>
+<nav class='absolute top-0 right-0 bg-white w-full h-full flex flex-col items-center' *ngIf="isOpen">
+  <button (click)="toggleMenu()">X</button>
+  <ul class="text-3xl">
+    <li (click)="toggleMenu()"><a href="#">INÍCIO</a></li>
+    <li (click)="toggleMenu()"><a href="#quem">QUEM SOMOS</a></li>
+    <li (click)="toggleMenu()"><a href="#tecnica">TÉCNICAS</a></li>
+    <li (click)="toggleMenu()"><a href="#onde">ONDE ESTAMOS</a></li>
+    <li (click)="toggleMenu()"><a href="#contato">CONTATO</a></li>
+  </ul>
+</nav>

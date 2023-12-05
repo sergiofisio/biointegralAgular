@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ScreenSizeService } from 'src/app/screen-size.service';
 
 @Component({
   selector: 'app-people',
@@ -8,4 +9,10 @@ export class PeopleComponent {
   @Input() image!: string;
   @Input() name!: string;
   @Input() register!: string;
+
+  isSmallScreen$ = this.ScreenSizeService.isSmallScreen$;
+
+  constructor(private ScreenSizeService: ScreenSizeService) {
+
+  }
 }

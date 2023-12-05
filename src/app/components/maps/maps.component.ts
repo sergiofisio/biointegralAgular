@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
+import { ScreenSizeService } from 'src/app/screen-size.service';
 
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.component.html'
 })
 export class MapsComponent {
+  isSmallScreen$ = this.ScreenSizeService.isSmallScreen$;
+
+  constructor(private ScreenSizeService: ScreenSizeService) {
+
+  }
+
   locals = [
     {
       city: 'São Paulo',

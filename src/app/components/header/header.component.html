@@ -1,4 +1,7 @@
 <header class="flex items-center justify-around w-full bg-white h-40">
-<img class="h-16" src="../../../assets/site/LOGO.svg" alt="Logo">
-<app-navigation></app-navigation>
+  <img [ngClass]="(isSmallScreen$ | async)?'w-40':'w-80 h-20'" src="../../../assets/site/LOGO.svg" alt="Logo">
+  <app-navigation *ngIf="(isSmallScreen$ | async) === false; else mobileMenu"></app-navigation>
+  <ng-template #mobileMenu>
+    <app-hamburger-menu></app-hamburger-menu>
+  </ng-template>
 </header>

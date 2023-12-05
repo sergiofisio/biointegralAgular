@@ -1,6 +1,6 @@
 <div class="flex flex-col items-center font-manroge py-6 px-10">
-  <h1 class="text-6xl font-bold">Locais de atendimento</h1>
-  <div class="flex items-center justify-center w-full">
+  <h1 [ngClass]="(isSmallScreen$ | async)?'text-3xl':'text-6xl'" class="font-bold">Locais de atendimento</h1>
+  <div [ngClass]="(isSmallScreen$ | async)?'flex-col':''" class="flex items-center justify-center w-full">
     <app-local class="first:border-r-2 border-r-blue border-dotted px-4 border-opacity-20" *ngFor="let local of locals"
       [local]="local" />
   </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ScreenSizeService } from 'src/app/screen-size.service';
 
 
 @Component({
@@ -6,6 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './card.component.html'
 })
 export class CardComponent {
+  isSmallScreen$ = this.ScreenSizeService.isSmallScreen$;
+
+  constructor(private ScreenSizeService: ScreenSizeService) {
+
+  }
   @Input() serviceInfo!: { nome: string, img: string, descricao: { paragrafo1: string, paragrafo2: string }, modal: any };
 
   showModal = false

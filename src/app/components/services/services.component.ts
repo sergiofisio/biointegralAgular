@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { ScreenSizeService } from 'src/app/screen-size.service';
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html'
 })
 export class ServicesComponent {
+  isSmallScreen$ = this.ScreenSizeService.isSmallScreen$;
+
+  constructor(private ScreenSizeService: ScreenSizeService) {
+
+  }
   services = [
     {
       id: 1,
