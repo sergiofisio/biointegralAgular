@@ -14,7 +14,6 @@ export class ApresentationComponent {
   }
 
   constructor(private ScreenSizeService: ScreenSizeService) {
-    console.log(this.isSmallScreen$);
 
   }
 }

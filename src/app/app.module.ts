@@ -20,8 +20,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { InputComponent } from './components/footer/form/input/input.component';
 import { FormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
-import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
-import { MenuItemComponent } from './hamburger-menu/menu-item/menu-item.component';
+import { HamburgerMenuComponent } from './components/header/navigation/hamburger-menu/hamburger-menu.component';
+import { MenuItemComponent } from './components/header/navigation/hamburger-menu/menu-item/menu-item.component';
 
 
 @NgModule({
