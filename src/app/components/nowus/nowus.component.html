@@ -1,7 +1,6 @@
-<div
-  [ngClass]="(isSmallScreen$ | async)?'justify-around items-center bg-none h-96':' flex-col w-full h-[50rem] flex items-center'"
-  class="p-4">
-  <h1 [ngClass]="(isSmallScreen$ | async)?' text-2xl ':'text-6xl '" class="flex justify-around text-center font-bold">
+<div [ngClass]="(isSmallScreen$ | async)?'justify-around items-center bg-none':' w-full h-[50rem] items-center'"
+  class="p-4 flex flex-col ">
+  <h1 [ngClass]="(isSmallScreen$ | async)?' text-3xl ':'text-6xl '" class="flex justify-around text-center font-bold">
     Conheça o Dr. Sergio e a Dra. Fresia</h1>
   <div
     [ngClass]="(isSmallScreen$ | async)?' hidden ':'text-4xl text-gray font-normal flex flex-col leading-[2.8rem] gap-8'"

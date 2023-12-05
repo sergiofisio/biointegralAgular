@@ -1,6 +1,7 @@
-<div [ngClass]="(isSmallScreen$ | async)?'px-3':'px-10'"
-  class="flex flex-col items-center w-full h-full font-manroge gap-14 py-6 ">
-  <h1 class="text-6xl font-bold">Técnicas Que Utilizamos</h1>
+<div [ngClass]="(isSmallScreen$ | async)?'px-3':'px-10 h-full '"
+  class="flex flex-col items-center w-full font-manroge gap-14 py-6 ">
+  <h1 [ngClass]="(isSmallScreen$ | async)?'text-3xl':'text-6xl'" class="font-bold text-center">Técnicas Que Utilizamos
+  </h1>
   <p class="text-3xl font-base text-gray text-center">O nosso trabalho é integrar o maior número de técnicas possíveis
     na consulta
     para maximizar os resultados com o menor número de sessões possíveis.</p>
