@@ -1,0 +1,6 @@
+<label class="uppercase w-full" [for]="question.question">{{question.question}}</label>
+<select [ngClass]="{ 'border-[red]': question.error, 'border-black': !question.error }"
+  class="flex border-black border-2 border-solid rounded-3xl max-h-full h-full w-full px-3" [(ngModel)]="question.value"
+  (ngModelChange)="onModelChange($event, 'question')" name="question" id="question" required (focus)="onFocus()">
+  <option *ngFor="let option of question.options" [value]="option">{{ option }}</option>
+</select>

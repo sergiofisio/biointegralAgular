@@ -1,0 +1,30 @@
+<h2 class="text-center text-5xl font-bold">Sobre os seus relacionamentos</h2>
+<div class="flex flex-col gap-4">
+  <div class="flex items-center gap-4">
+    <app-input-selector-form-patient [question]="questions.parentsAlive"
+      class="flex w-1/4 h-full items-center gap-4" />
+    <app-input-selector-form-patient *ngIf="questions.parentsAlive.value"
+      [question]="questions.parentsAlive.relationship" class="flex w-1/4 h-full items-center gap-4" />
+  </div>
+  <app-input-form-patient class="flex w-full h-full items-center gap-4" *ngIf="questions.parentsAlive.value" [question]="questions.parentsAlive.description" />
+</div>
+<div class="flex flex-col gap-4">
+  <app-input-selector-form-patient class="flex w-1/4 h-full items-center gap-4" [question]="questions.haveSiblings" />
+  <app-input-form-patient *ngIf="questions.haveSiblings.value==='Sim'" class="flex w-1/4 h-full items-center gap-4" [question]="questions.haveSiblings.many" />
+  <app-input-selector-form-patient *ngIf="questions.haveSiblings.value==='Sim'" class="flex w-1/4 h-full items-center gap-4" [question]="questions.haveSiblings.relationship" />
+  <app-input-form-patient *ngIf="questions.haveSiblings.value==='Sim'" [question]="questions.haveSiblings.description" />
+</div>
+<div class="flex flex-col gap-4">
+  <app-input-selector-form-patient class="flex w-1/4 h-full items-center gap-4" [question]="questions.relationship" />
+  <app-input-form-patient *ngIf="questions.relationship.value" [question]="questions.relationship.description" />
+</div>
+<div class="flex flex-col gap-4">
+  <app-input-selector-form-patient class="flex w-1/4 h-full items-center gap-4" [question]="questions.haveKids" />
+  <div *ngIf="questions.haveKids.value === 'Sim'">
+    <app-input-form-patient class="flex w-1/4 h-full items-center gap-4"  [question]="questions.haveKids.many" />
+    <app-input-selector-form-patient class="flex w-1/4 h-full items-center gap-4" [question]="questions.haveKids.abortion" />
+    <app-input-form-patient *ngIf="questions.haveKids.abortion.value==='Sim'" class="flex w-1/4 h-full items-center gap-4" [question]="questions.haveKids.abortion.many" />
+  </div>
+  <app-input-form-patient *ngIf="questions.haveKids.value" [question]="questions.haveKids.description" />
+</div>
+<app-input-form-patient [question]="questions.moreInfo" />

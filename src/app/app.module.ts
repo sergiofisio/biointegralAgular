@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ToastModule } from 'primeng/toast';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,16 @@ import { FormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { HamburgerMenuComponent } from './components/header/navigation/hamburger-menu/hamburger-menu.component';
 import { MenuItemComponent } from './components/header/navigation/hamburger-menu/menu-item/menu-item.component';
-
+import { HeaderFormComponent } from './page/form-page/header-form/header-form.component';
+import { FormPageComponent } from './page/form-page/form-page.component';
+import { FormPatientComponent } from './page/form-page/form-patient/form-patient.component';
+import { QuestionsComponent } from './page/form-page/form-patient/step3/questions.component';
+import { Step1Component } from './page/form-page/form-patient/step1/step1.component';
+import { Step2Component } from './page/form-page/form-patient/step2/step2.component';
+import { Step4Component } from './page/form-page/form-patient/step4/step4.component';
+import { InputComponentFormPatient } from './page/form-page/form-patient/input/input/input.component';
+import { InputSelectorFormPatientComponent } from './page/form-page/form-patient/input/input-selector-form-patient/input-selector-form-patient.component';
+import { AdressComponent } from './page/form-page/form-patient/step1/adress/adress.component';
 
 @NgModule({
   declarations: [
@@ -41,9 +51,18 @@ import { MenuItemComponent } from './components/header/navigation/hamburger-menu
     MapsComponent,
     LocalComponent,
     InputComponent,
+    InputComponentFormPatient,
     HamburgerMenuComponent,
     MenuItemComponent,
-
+    HeaderFormComponent,
+    FormPageComponent,
+    FormPatientComponent,
+    QuestionsComponent,
+    Step1Component,
+    Step2Component,
+    Step4Component,
+    InputSelectorFormPatientComponent,
+    AdressComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +70,7 @@ import { MenuItemComponent } from './components/header/navigation/hamburger-menu
     GoogleMapsModule,
     FormsModule,
     NgxMaskModule.forRoot(),
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,45 @@
+<h2 class="text-center text-5xl font-bold">DADOS PESSOAIS</h2>
+<div class="flex w-full gap-4">
+  <app-input-form-patient [question]="questions.name" class="flex flex-col w-full" />
+  <app-input-selector-form-patient [question]="questions.gender" class="flex flex-col w-1/6" />
+</div>
+<div class="flex w-full gap-4">
+  <app-input-form-patient [question]="questions.email" class="flex flex-col w-full" />
+  <app-input-form-patient [question]="questions.birth" class="flex flex-col w-1/5" (blur)="calculateAge()" />
+  <app-input-form-patient [question]="questions.age" class="flex flex-col items-center w-1/12" [disabled]="true" />
+</div>
+<div *ngIf="questions.gender.value==='Feminino'&&questions.age.value>=10"
+  class="flex items-center justify-between w-full gap-4">
+  <app-input-form-patient [question]="questions.ageFirstPeriod" class="flex flex-col" />
+  <div class="flex gap-4" *ngIf="questions.age.value>=35">
+    <app-input-selector-form-patient [question]="questions.menopause" class="flex flex-col" />
+    <app-input-form-patient *ngIf="questions.menopause.value==='Sim'" [question]="questions.menopause.age"
+      class="flex flex-col" />
+  </div>
+</div>
+<div class="flex w-full gap-4">
+  <app-input-form-patient [question]="questions.religion" class="flex flex-col" />
+  <app-input-form-patient [question]="questions.job" class="flex flex-col" />
+  <app-input-form-patient [question]="questions.phone" class="flex flex-col" />
+</div>
+<app-adress class="flex flex-col w-full px-10" [adress]="questions.adress" />
+<app-input-form-patient [question]="questions.knowUs" class="flex flex-col" />
+<app-input-form-patient [question]="questions.motive" class="flex flex-col" />
+<label class="flex flex-col">{{questions.emotion.question}}</label>
+<div class="flex gap-3 capitalize"
+  [ngClass]="{ 'border-[red] border-2 border-solid rounded-3xl': questions.emotion.error, 'border-none': !questions.emotion.error }">
+  <div class="flex flex-col justify-evenly min-w-fit">
+    <label class="capitalize cursor-pointer" *ngFor="let option of questions.emotion.options">
+      <input type="checkbox" [value]="option" (change)="emotionSelected($event)"
+        (focus)="questions.emotion.error=false" />
+      {{option}}
+    </label>
+  </div>
+
+  <app-input-form-patient [question]="questions.emotion.especifique" class="flex flex-col w-full" />
+</div>
+<app-input-form-patient [question]="questions.start" class="flex flex-col" />
+<app-input-form-patient [question]="questions.advantage" class="flex flex-col" />
+<app-input-form-patient [question]="questions.inconvenient" class="flex flex-col" />
+<app-input-form-patient [question]="questions.needs" class="flex flex-col" />
+<app-input-form-patient [question]="questions.problemOneWord" class="flex flex-col" />

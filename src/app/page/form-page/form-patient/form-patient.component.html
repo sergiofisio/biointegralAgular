@@ -1,0 +1,20 @@
+<div class="flex flex-col px-20 py-8 w-full h-full gap-4">
+  <app-step1 class="flex flex-col w-full h-full gap-3" *ngIf="step === 1" [questions]="form.step1" />
+  <app-step2 class="flex flex-col w-full h-full gap-3" *ngIf="step === 2" [questions]="form.step2" />
+  <div *ngIf="step === 3" class="flex flex-col w-full h-full gap-3">
+    <h2 class="text-center text-5xl font-bold">Sobre sua saúde mental</h2>
+    <ng-container *ngFor="let item of form.step3">
+      <app-questions [options]="item.options" [label]="item.question" [(model)]="item.value" [error]="item.error"/>
+    </ng-container>
+  </div>
+  <app-step4 class="flex flex-col w-full h-full gap-3" *ngIf="step === 4" [questions]="form.step4" />
+  <div class="flex items-center justify-center w-full gap-2">
+    <button
+      class="bg-blue border-blue border-2 border-solid text-white p-2 w-1/4 transition-all duration-500 h-full rounded-3xl hover:bg-white hover:text-blue"
+      [ngClass]="step === 1 ? 'opacity-0' : 'opacity-100'"
+      (click)="handleChangeStep()">{{step === 1 ? '' : 'Voltar'}}</button>
+    <button
+      class="bg-blue border-blue border-2 border-solid text-white p-2  w-1/4 transition-all duration-500 h-full rounded-3xl hover:bg-white hover:text-blue"
+      (click)="step === 4 ? handleSubmit() : handleChangeStep('next')">{{step === 4 ? 'Finalizar' : 'Proximo'}}</button>
+  </div>
+</div>

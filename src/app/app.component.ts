@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,17 +9,21 @@ export class AppComponent {
   showScrollTopBtn = false;
   title = 'biointegral';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
+    if (this.router.url.endsWith('formulario')) {
+      return;
+    }
+
     this.showScrollTopBtn = (document.documentElement.scrollTop || document.body.scrollTop) > 200;
   }
 
   scrollTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 }
